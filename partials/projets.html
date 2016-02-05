@@ -11,7 +11,7 @@
           <ul class="page_header_actions button_group">
             <li>
               <span class="small people_dropdown can_manage dropdown_button dropdown_button position_bottom">
-  <button id="_button" type="button"><span class="name">Cool-laborateurs (1)</span>
+                <a href="#/project/1/team"> </a><button id="_button" type="button"><a href="#/project/1/team"><span class="name">Cool-laborateurs (1)</span></a>
               </button>
               <div class="menu menu_right">
                 <span class="button_arrow"></span>
@@ -34,7 +34,7 @@
             </li>
             <li>
               <span class="small project_details dropdown_button position_bottom" button-title="Project Info">
-  <button id="_button" type="button"><span class="name">Info du projet</span>
+                <a href="#/projets/ajouter"> </a><button id="_button" type="button"><a href="#/projets/ajouter"><span class="name">Info du projet</span></a>
               </button>
               <div class="menu menu_right">
                 <span class="button_arrow"></span>
@@ -134,169 +134,325 @@
             <button class="tasks_batch_trigger icon_batch_edit_grey"></button>
 
             <div class="unsorted_tasks">
-              <div class="add_new_unsorted" id="add_new_unsorted">
-                <a ng-href="" class="add_new_unsorted_trigger"><span>+ Ajouter un Ticket</span></a>
-              </div>
-            </div>
-            <div class="task_lists">
-              <div class="task_list_tasks ui-droppable" id="task_list_1">
-                <div class="task_list">
-                  <span class="task_list_options small chromeless object_actions_dropdown">
-  <span class="dropdown_button position_bottom" icon="icon_options_dropdown_black">
-  <button id="_button" type="button"><span class="icon icon_options_dropdown_black"></span>
-                  <span class="name"></span>
-                  </button>
-                  <!-- ngIf: !dropdown --><div class="menu menu_right ng-scope" ng-if="!dropdown">
-                    <span class="button_arrow"></span>
-                    <div class="menu_inner">
+              <div class="add_new_unsorted opened" id="add_new_unsorted">
+                <form class="slim_form slim_form_inline ng-pristine ang_form ng-invalid ng-invalid-required ng-valid-maxlength" name="add_unsorted" novalidate="true">
+                  <div class="task_form ng-valid with_subscribers" project="project">
+                    <div class="slim_form_column_wrapper">
+                      <div class="slim_form_left_column with_task_list">
+                        <div class="form_block">
+                          <div class="form_section name_description">
+                            <div class="form_field name form_field_validation" form-field="name">
+                              <input type="text" name="name" ng-model="ng_model.name" focus-on="true" placeholder="Nom du Ticket" required="" ng-maxlength="150" maxlength="150" autocomplete="off" class="ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched">
+                              <div class="form_field_validation_message">Required</div>
+                            </div>
+                            <div class="form_field editor">
+                              <div class="visual_editor_tinymce_wrapper ng-valid ng-pristine" placeholder="Décrivez le">
+                                <div class="visual_editor_tinymce_toggler">A</div>
+                                <div id="tinymce_rfgmj0q1h9jgiudi_toolbar" class="visual_editor_tinymce_toolbar visual_editor_tinymce_toolbar_hidden">
+                                  <div id="mceu_78" class="mce-tinymce mce-tinymce-inline mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="border-width: 1px; left: 0px; top: 0px; width: 357px; height: 30px;">
+                                    <div id="mceu_78-body" class="mce-container-body mce-abs-layout" style="width: 357px; height: 30px;">
+                                      <div id="mceu_78-absend" class="mce-abs-end"></div>
+                                      <div id="mceu_79" class="mce-toolbar-grp mce-container mce-panel mce-abs-layout-item mce-first mce-last" hidefocus="1" tabindex="-1" role="group" style="left: 0px; top: 0px; width: 357px; height: 30px;">
+                                        <div id="mceu_79-body" class="mce-container-body mce-stack-layout" style="width: 357px; height: 30px;">
+                                          <div id="mceu_80" class="mce-container mce-toolbar mce-stack-layout-item mce-first mce-last" role="toolbar">
+                                            <div id="mceu_80-body" class="mce-container-body mce-flow-layout">
+                                              <div id="mceu_81" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group">
+                                                <div id="mceu_81-body">
+                                                  <div id="mceu_68" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_68" role="button" aria-label="Bold" title="Bold">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button>
+                                                  </div>
+                                                  <div id="mceu_69" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_69" role="button" aria-label="Italic" title="Italic">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button>
+                                                  </div>
+                                                  <div id="mceu_70" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_70" role="button" aria-label="Underline" title="Underline">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button>
+                                                  </div>
+                                                  <div id="mceu_71" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_71" role="button" aria-label="Strikethrough" title="Strikethrough">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div id="mceu_82" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
+                                                <div id="mceu_82-body">
+                                                  <div id="mceu_72" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_72" role="button" aria-label="Bullet list" title="Bullet list">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button>
+                                                  </div>
+                                                  <div id="mceu_73" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_73" role="button" aria-label="Numbered list" title="Numbered list">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div id="mceu_83" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
+                                                <div id="mceu_83-body">
+                                                  <div id="mceu_74" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_74" role="button" aria-label="Insert image" title="Insert image">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-image"></i></button>
+                                                  </div>
+                                                  <div id="mceu_75" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_75" role="button" aria-label="Insert/edit link" title="Insert/edit link">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div id="mceu_84" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group">
+                                                <div id="mceu_84-body">
+                                                  <div id="mceu_76" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_76" role="button" aria-label="Insert code" title="Insert code">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-code"></i></button>
+                                                  </div>
+                                                  <div id="mceu_77" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_77" role="button" aria-label="Quote" title="Quote">
+                                                    <button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-quote"></i></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="tinymce_rfgmj0q1h9jgiudi" class="a51 visual_editor_tinymce mce-content-body mce-edit-focus" contenteditable="true" dir="ltr" style="position: relative;"></div>
+                                <input type="hidden" name="tinymce_rfgmj0q1h9jgiudi" value="">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form_section ang_drop_files" style="position: relative;">
+                            <div class="form_field">
+                              <div class="select_attachments ng-valid" attachments="task.attachments">
+                                <span class="ang_upload_wrapper"><div class="select_attachments_control select_attachments_control_empty">
+              <span class="select_attachments_title">Pièces jointes</span>
+                                <a href="" class="select_attachments_trigger">Fichiers..</a>
+                              </div>
+                              <input type="file" class="ang_upload" value="" accept="" multiple="multiple">
+                              </span>
+
+                            </div>
+                          </div>
+                          <div class="ang_drop_files_placeholder">
+                            <div class="ang_drop_files_message"><span class="icon icon_upload_black size_24"></span>Drop here to Upload</div>
+                          </div>
+                        </div>
+                        <div class="form_section">
+                          <div class="form_field">
+                            <div class="select_subscribers ng-valid" object="task">
+                              <div class="select_subscribers_header">
+                                <span class="select_subscribers_title">Cool Laborateurs</span>
+                                <span class="select_subscribers_trigger"><a href="">Choisir</a></span>
+                                <span class="select_subscribers_list">robin-delaporte</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div><!-- end ngIf: !dropdown -->
-                  </span>
-                  </span>
-                  <h2>
-                <span>Tickets en cours</span>
-              </h2>
-                </div>
-                <div>
-                  <section class="panel tasks-widget">
 
-                    <div class="panel-body">
+                    <div class="slim_form_right_column">
+                      <h4>Task Settings</h4>
+                      <div class="form_section">
+                        <div class="form_field form_field_validation" form-field="task_list_id">
+                          <label>Liste de Tickets</label>
+                          <span class="slim_control with_value"><span class="slim_control_label">Liste de Tickets</span><span class="slim_control_caret icon_caret_down_alt_black"></span>
+                          <select class="slim_control_trigger ng-valid ng-valid-required">
+                            <option value="" class="ng-hide">Choisir</option>
+                            <option value="0" selected="selected" label="Inbox">Liste de Tickets</option>
+                          </select>
+                          </span>
+                          <div class="form_field_validation_message"></div>
+                        </div>
 
-                      <div class="task-content">
-
-                        <ul class="task-list">
-                          <li class="task-done">
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" checked />
-                              <!-- <input type="checkbox" class="square-grey"/> -->
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Faire des bisous à Simon</span>
-                              <span class="label label-success">2 jours</span>
-                              <div class="pull-right hidden-phone">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="">
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" />
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Finir le projet d'IHM</span>
-                              <span class="label label-danger">Fini</span>
-                              <div class="pull-right hidden-phone">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" />
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Se documenter sur Symfony 2</span>
-                              <span class="label label-warning">Cours</span>
-                              <div class="pull-right hidden-phone">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" />
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Faire un beau rapport</span>
-                              <span class="label label-primary">3 jours</span>
-                              <div class="pull-right hidden-phone">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" />
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Réviser la cinématique des fichiers</span>
-                              <span class="label label-inverse">Mtn</span>
-                              <div class="pull-right">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="task-checkbox">
-                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                              <input type="checkbox" class="flat-grey" />
-                            </div>
-                            <div class="task-title">
-                              <span class="task-title-sp">Avoir 20/20 dans toute les matières</span>
-                              <span class="label label-success">2 Jours</span>
-                              <div class="pull-right hidden-phone">
-                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                              </div>
-                            </div>
-                          </li>
+                        <div class="form_field">
+                          <label>Principal executant</label>
+                          <span class="slim_control"><span class="slim_control_label"></span><span class="slim_control_caret icon_caret_down_alt_black"></span><span class="select_assignee_new slim_control ng-valid">
+  <span class="slim_control_label">Personne</span>
+                          </span>
+                          </span>
+                        </div>
+                        <div class="form_field">
+                          <label>Dead-Line</label>
+                          <span class="slim_control without_value"><span class="slim_control_label">Choisir</span><span class="slim_control_caret icon_caret_down_alt_black"></span><span class="select_date">
+  <input type="text" placeholder="" readonly="" name="" class="ng-pristine ng-untouched ng-valid ng-valid-required">
+</span></span>
+                        </div>
 
 
-                        </ul>
                       </div>
 
-
+                      <div class="form_section checkboxes">
+                        <label>
+                          <input type="checkbox" class="ng-pristine ng-untouched ng-valid">Cacher aux clients</label>
+                        <label>
+                          <input type="checkbox" class="ng-pristine ng-untouched ng-valid">Haute priorité</label>
+                      </div>
                     </div>
-                  </section>
-                </div>
-                <div class="project_tasks_add_wrapper">
-                  <div class="project_tasks_add">
-                    <a href=""><span>+ Ajouter un Ticket</span></a>
                   </div>
-                </div>
               </div>
-            </div>
-            <div class="add_task_list_wrapper">
-              <h2><a href="">+ Ajouter une liste de Tickets</a></h2>
+              <div class="form_buttons small">
+                <button type="submit" class="default small submit_button">Ajouter le Ticket<span class="loader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div></span><span class="uploading_label">Uploading...</span></button>
+              </div>
+              </form>
             </div>
           </div>
-          <div class="project_tasks_right_column">
-            <div class="project_tasks_right_column_section sidebar_task_lists">
-              <h3>Liste de Tickets</h3>
-              <ul class="ng-pristine ng-untouched ng-valid ui-sortable">
-                <li class="task_list_reorder ui-sortable-handle"><span class="icon size_14 icon_reorder_grey"></span><span>Tickets en cours (5)</span></li>
-              </ul>
-            </div>
-            <div class="project_tasks_right_column_section sidebar_progress">
-              <h3>Progression du projet</h3>
-              <p>1 sur 6 Tickets.
-                <br> 5 Ticket en cours.</p>
-              <div class="progressbar">
-                <div class="progressbar_value" style="width: 16%">
+          <div class="task_lists">
+            <div class="task_list_tasks ui-droppable" id="task_list_1">
+              <div class="task_list">
+                <span class="task_list_options small chromeless object_actions_dropdown">
+  <span class="dropdown_button position_bottom" icon="icon_options_dropdown_black">
+  <button id="_button" type="button"><span class="icon icon_options_dropdown_black"></span>
+                <span class="name"></span>
+                </button>
+                <!-- ngIf: !dropdown -->
+                <!-- ngIf: !dropdown -->
+                <div class="menu menu_right ng-scope" ng-if="!dropdown">
+                  <span class="button_arrow"></span>
+                  <div class="menu_inner">
+                  </div>
+                </div>
+                <!-- end ngIf: !dropdown -->
+                <!-- end ngIf: !dropdown -->
+                </span>
+                </span>
+                <h2>
+                <span>Tickets en cours</span>
+              </h2>
+              </div>
+              <div>
+                <section class="panel tasks-widget">
+
+                  <div class="panel-body">
+
+                    <div class="task-content">
+
+                      <ul class="task-list">
+                        <li class="task-done">
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" checked/>
+                            <!-- <input type="checkbox" class="square-grey"/> -->
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Faire des bisous à Simon</span>
+                            <span class="label label-success">2 jours</span>
+                            <div class="pull-right hidden-phone">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="">
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" />
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Finir le projet d'IHM</span>
+                            <span class="label label-danger">Fini</span>
+                            <div class="pull-right hidden-phone">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" />
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Se documenter sur Symfony 2</span>
+                            <span class="label label-warning">Cours</span>
+                            <div class="pull-right hidden-phone">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" />
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Faire un beau rapport</span>
+                            <span class="label label-primary">3 jours</span>
+                            <div class="pull-right hidden-phone">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" />
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Réviser la cinématique des fichiers</span>
+                            <span class="label label-inverse">Mtn</span>
+                            <div class="pull-right">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="task-checkbox">
+                            <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                            <input type="checkbox" class="flat-grey" />
+                          </div>
+                          <div class="task-title">
+                            <span class="task-title-sp">Avoir 20/20 dans toute les matières</span>
+                            <span class="label label-success">2 Jours</span>
+                            <div class="pull-right hidden-phone">
+                              <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
+                            </div>
+                          </div>
+                        </li>
+
+
+                      </ul>
+                    </div>
+
+
+                  </div>
+                </section>
+              </div>
+              <div class="project_tasks_add_wrapper">
+                <div class="project_tasks_add">
+                  <a href=""><span>+ Ajouter un Ticket</span></a>
                 </div>
               </div>
-              <a ng-href="projects/1/tasks/archive" class="less_important" href="projects/1/tasks/archive">Voir les Tickets finis</a>
             </div>
+          </div>
+          <div class="add_task_list_wrapper">
+            <h2><a href="">+ Ajouter une liste de Tickets</a></h2>
+          </div>
+        </div>
+        <div class="project_tasks_right_column">
+          <div class="project_tasks_right_column_section sidebar_task_lists">
+            <h3>Liste de Tickets</h3>
+            <ul class="ng-pristine ng-untouched ng-valid ui-sortable">
+              <li class="task_list_reorder ui-sortable-handle"><span class="icon size_14 icon_reorder_grey"></span><span>Tickets en cours (5)</span></li>
+            </ul>
+          </div>
+          <div class="project_tasks_right_column_section sidebar_progress">
+            <h3>Progression du projet</h3>
+            <p>1 sur 6 Tickets.
+              <br> 5 Ticket en cours.</p>
+            <div class="progressbar">
+              <div class="progressbar_value" style="width: 16%">
+              </div>
+            </div>
+            <a ng-href="projects/1/tasks/archive" class="less_important" href="projects/1/tasks/archive">Voir les Tickets finis</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 <script src="js/todotask.js"></script>

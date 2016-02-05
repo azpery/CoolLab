@@ -21,9 +21,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Pages
     .when("/index", {templateUrl: "partials/index.html", controller: "PageCtrl"})
     .when("/#", {templateUrl: "partials/index.html", controller: "PageCtrl"})
-    .when("/general", {templateUrl: "partials/general.html", controller: "PageCtrl"})
-    .when("/basic", {templateUrl: "partials/basic_form.html", controller: "PageCtrl"})
-    .when("/simple", {templateUrl: "partials/simple.html", controller: "PageCtrl"})
+    .when("/travail", {templateUrl: "partials/travail.html", controller: "PageCtrl"})
+    .when("/activite", {templateUrl: "partials/act.html", controller: "PageCtrl"})
     .when("/ressources", {templateUrl: "partials/ressouces.html", controller: "PageCtrl"})
     .when("/projets/ajouter", {templateUrl: "partials/ajouterProjet.html", controller: "PageCtrl"})
     .when("/projects/1", {templateUrl: "partials/projets.html", controller: "PageCtrl"})
@@ -31,6 +30,9 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/projects/1/fichier", {templateUrl: "partials/Fichier.html", controller: "PageCtrl"})
     .when("/projects/1/activite", {templateUrl: "partials/Activite.html", controller: "PageCtrl"})
     .when("/project/1/discussion/1", {templateUrl: "partials/discussionModal.html", controller: "PageCtrl"})
+    .when("/project/1/team", {templateUrl: "partials/team.html", controller: "PageCtrl"})
+    .when("/projects/1/discussions/add", {templateUrl: "partials/ouvrirDiscussion.html", controller: "PageCtrl"})
+    .when("/calendrier", {templateUrl: "partials/calendrier.html", controller: "PageCtrl"})
     .otherwise({templateUrl: "partials/index.html", controller: "PageCtrl"})
 }]);
 
