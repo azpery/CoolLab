@@ -24,6 +24,13 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/general", {templateUrl: "partials/general.html", controller: "PageCtrl"})
     .when("/basic", {templateUrl: "partials/basic_form.html", controller: "PageCtrl"})
     .when("/simple", {templateUrl: "partials/simple.html", controller: "PageCtrl"})
+    .when("/ressources", {templateUrl: "partials/ressouces.html", controller: "PageCtrl"})
+    .when("/projets/ajouter", {templateUrl: "partials/ajouterProjet.html", controller: "PageCtrl"})
+    .when("/projects/1", {templateUrl: "partials/projets.html", controller: "PageCtrl"})
+    .when("/projects/1/discussion", {templateUrl: "partials/Discussion.html", controller: "PageCtrl"})
+    .when("/projects/1/fichier", {templateUrl: "partials/Fichier.html", controller: "PageCtrl"})
+    .when("/projects/1/activite", {templateUrl: "partials/Activite.html", controller: "PageCtrl"})
+    .when("/project/1/discussion/1", {templateUrl: "partials/discussionModal.html", controller: "PageCtrl"})
     .otherwise({templateUrl: "partials/index.html", controller: "PageCtrl"})
 }]);
 

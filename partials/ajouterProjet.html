@@ -1,0 +1,95 @@
+<div class="page_form labels_on_the_left narrow page" id="project_form" page-title="New Project" main-section="projects">
+  <div class="page_inner">
+
+    <!-- ngIf: !project.id -->
+    <div id="back_button" class="page_block" title="Projects" url="projects" ng-if="!project.id">
+      <div class="page_block_inner">
+        <a href="#/index" class="small button">↩ Projets</a>
+      </div>
+    </div>
+    <!-- end ngIf: !project.id -->
+    <!-- ngIf: project.id -->
+    <form method="post" name="project_form" action="#/projects/1" class=" ng-pristine ang_form ng-invalid ng-invalid-required ng-valid-maxlength ng-valid ng-scope">
+      <div class="page_main">
+
+        <!-- ngIf: page_object && page_object.is_trashed && page_object_loaded_is_trashed -->
+
+        <!-- ngIf: !page_object || (page_object && !page_object.is_trashed) || !page_object_loaded_is_trashed -->
+        <div class="page_main_inner">
+
+          <!-- ngIf: !project.id -->
+          <div class="form_section form_header">
+            <h1 class="no_border">Nouveau projet</h1>
+            <h2 class="form_subtitle">Après avoir créé ce nouveau projet, vous pourrez commencer à travailler avec vos Cool laborateurs.</h2>
+          </div>
+          <!-- end ngIf: !project.id -->
+
+          <!-- ngIf: project.id -->
+
+          <div class="form_block with_background">
+            <div class="form_section name form_field_validation" form-field="name">
+              <div class="form_field">
+                <label class="form_field_label">Nom du projet<span class="asterisk">*</span></label>
+                <input type="text" name="name" placeholder="Entrez le nom du projet" ng-maxlength="150" maxlength="150" autocomplete="off" class="ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched">
+                <div class="form_field_validation_message">Required</div>
+              </div>
+              <!-- <div ng-if="project_attributes.name == defaultProjectName || !project_attributes.name" class="new-project-arrow"> -->
+              <!-- <span class="new-project-arrow__text"><span class="new-project-arrow__text_inner">Type the project name here.</span></span> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="form_section description">
+              <div class="form_field">
+                <label class="form_field_label">Description</label>
+                <textarea placeholder="Décrivez votre projet" maxlength="191" ng-maxlength="191" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength"></textarea>
+              </div>
+            </div>
+
+            <!-- ngIf: templates && templates.length -->
+
+            <div class="form_section with_padding">
+
+
+              <div class="form_field">
+                <label class="form_field_label">Catégorie</label>
+                <div class="form_field_control">
+                  <span class="select_project_category_field ng-valid">
+  <span class="autocomplete ng-valid" placeholder="Nom de la catégorie" label-field="name" search-field="name" max-length="100" a="">
+  <!-- ngIf: !multi --><select class="autocomplete_control selectized" tabindex="-1" style="display: none;"><option value="" selected="selected"></option></select><div class="selectize-control autocomplete_control single"><div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Nom de la catégorie" maxlength="100"></div><div class="selectize-dropdown single autocomplete_control" style="display: none; width: 260px; top: 32px; left: 0px;"><div class="selectize-dropdown-content"></div></div></div><!-- end ngIf: !multi -->
+  <!-- ngIf: multi -->
+  <!-- ngIf: ngModel -->
+</span>
+                  </span>
+                  <p class="fvl_aid">Choisissez un catégorie pour rester organisé</p>
+                </div>
+              </div>
+            </div>
+            <div class="form_section tracking_details_section">
+              <div class="form_field">
+                <label class="form_field_label tracking_details_section_label">Générer un flux RSS avec ce projet</label>
+                <div class="form_field_control tracking_details_section_control">
+                  <ul class="checkbox_group">
+                    <li>
+                      <label>
+                        <input type="checkbox" class="ng-pristine ng-untouched ng-valid">Activer la génération du flux</label>
+                    </li>
+                    <!-- ngIf: project_attributes.is_tracking_enabled -->
+                  </ul>
+                  <!-- ngIf: project_attributes.is_tracking_enabled -->
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ngIf: !project.id && false -->
+          </div>
+
+          <div class="form_buttons">
+            <button class="default submit_button" type="submit">Créer le projet<span class="loader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div></span><span class="uploading_label">Uploading...</span></button>
+            <a class="" href="#/index" type="button">Annuler</a>
+          </div>
+        </div>
+        <!-- end ngIf: !page_object || (page_object && !page_object.is_trashed) || !page_object_loaded_is_trashed -->
+      </div>
+    </form>
+  </div>
