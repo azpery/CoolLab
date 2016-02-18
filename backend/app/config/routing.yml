@@ -1,0 +1,8 @@
+cool_lab:
+    resource: "@CoolLabBundle/Resources/config/routing.yml"
+    prefix:   /test
+
+rest :
+  type : rest
+  resource : "routing_rest.yml"
+  prefix : /api

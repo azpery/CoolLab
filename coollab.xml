@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.0.10deb1
+- http://www.phpmyadmin.net
+-
+- Client: localhost
+- Généré le: Mar 09 Février 2016 à 18:13
+- Version du serveur: 5.5.43-0ubuntu0.14.04.1
+- Version de PHP: 5.5.9-1ubuntu4.9
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="coollab" collation="utf8_bin" charset="utf8">
+            <pma:table name="affecte">
+                CREATE TABLE `affecte` (
+                  `idDev` int(11) NOT NULL,
+                  `idTick` int(11) NOT NULL,
+                  PRIMARY KEY (`idDev`,`idTick`),
+                  KEY `idTick` (`idTick`),
+                  CONSTRAINT `affecte_ibfk_2` FOREIGN KEY (`idTick`) REFERENCES `ticket` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                  CONSTRAINT `affecte_ibfk_1` FOREIGN KEY (`idDev`) REFERENCES `developpeur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="developpeur">
+                CREATE TABLE `developpeur` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `nom` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `prenom` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `photo` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `email` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `mdp` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="discussion">
+                CREATE TABLE `discussion` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `dateCreation` date NOT NULL,
+                  `Etat` tinyint(1) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="projet">
+                CREATE TABLE `projet` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `nom` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `categorie` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `deadline` date NOT NULL,
+                  `idChef` int(11) NOT NULL,
+                  `dateCrea` date NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `idChef` (`idChef`),
+                  CONSTRAINT `projet_ibfk_1` FOREIGN KEY (`idChef`) REFERENCES `developpeur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="repond">
+                CREATE TABLE `repond` (
+                  `idDev` int(11) NOT NULL,
+                  `idDisc` int(11) NOT NULL,
+                  `dateEnvoie` date NOT NULL,
+                  `message` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  PRIMARY KEY (`idDev`,`idDisc`),
+                  KEY `idDisc` (`idDisc`),
+                  CONSTRAINT `repond_ibfk_2` FOREIGN KEY (`idDisc`) REFERENCES `discussion` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                  CONSTRAINT `repond_ibfk_1` FOREIGN KEY (`idDev`) REFERENCES `developpeur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="RSS">
+                CREATE TABLE `RSS` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `title` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `pubDate` date NOT NULL,
+                  `link` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `idProj` int(11) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `idProj` (`idProj`),
+                  CONSTRAINT `RSS_ibfk_1` FOREIGN KEY (`idProj`) REFERENCES `projet` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="ticket">
+                CREATE TABLE `ticket` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `idProj` int(11) NOT NULL,
+                  `libelle` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                  `etat` int(11) NOT NULL DEFAULT '0',
+                  `dateCrea` date NOT NULL,
+                  `echeance` date NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `idProj` (`idProj`),
+                  CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`idProj`) REFERENCES `projet` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="travaille">
+                CREATE TABLE `travaille` (
+                  `idDev` int(11) NOT NULL,
+                  `idProj` int(11) NOT NULL,
+                  PRIMARY KEY (`idDev`,`idProj`),
+                  KEY `idProj` (`idProj`),
+                  CONSTRAINT `travaille_ibfk_2` FOREIGN KEY (`idProj`) REFERENCES `projet` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                  CONSTRAINT `travaille_ibfk_1` FOREIGN KEY (`idDev`) REFERENCES `developpeur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de données: 'coollab'
+    -->
+    <database name="coollab">
+        <!-- Table affecte -->
+        <!-- Table developpeur -->
+        <!-- Table discussion -->
+        <!-- Table projet -->
+        <!-- Table repond -->
+        <!-- Table RSS -->
+        <!-- Table ticket -->
+        <!-- Table travaille -->
+    </database>
+</pma_xml_export>

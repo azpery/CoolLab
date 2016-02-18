@@ -1,0 +1,108 @@
+<?php
+
+namespace CoolLabBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Developpeur
+ *
+ * @ORM\Table(name="developpeur")
+ * @ORM\Entity
+ */
+class Developpeur
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="text", length=65535, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="text", length=65535, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="text", length=65535, nullable=false)
+     */
+    private $photo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="text", length=65535, nullable=false)
+     */
+    private $mdp;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="CoolLabBundle\Entity\Projet", inversedBy="iddev")
+     * @ORM\JoinTable(name="travaille",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="idDev", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="idProj", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $idproj;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="CoolLabBundle\Entity\Discussion", inversedBy="iddev")
+     * @ORM\JoinTable(name="repond",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="idDev", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="idDisc", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $iddisc;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="CoolLabBundle\Entity\Ticket", inversedBy="iddev")
+     * @ORM\JoinTable(name="affecte",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="idDev", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="idTick", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $idtick;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idproj = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->iddisc = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idtick = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

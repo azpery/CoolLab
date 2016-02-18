@@ -1,0 +1,85 @@
+<?php
+
+namespace CoolLabBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Projet
+ *
+ * @ORM\Table(name="projet", indexes={@ORM\Index(name="idChef", columns={"idChef"})})
+ * @ORM\Entity
+ */
+class Projet
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="text", length=65535, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="text", length=65535, nullable=false)
+     */
+    private $categorie;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="deadline", type="date", nullable=false)
+     */
+    private $deadline;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCrea", type="date", nullable=false)
+     */
+    private $datecrea;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \CoolLabBundle\Entity\Developpeur
+     *
+     * @ORM\ManyToOne(targetEntity="CoolLabBundle\Entity\Developpeur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idChef", referencedColumnName="id")
+     * })
+     */
+    private $idchef;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="CoolLabBundle\Entity\Developpeur", mappedBy="idproj")
+     */
+    private $iddev;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->iddev = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

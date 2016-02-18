@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="CoolLabBundle\Entity\Developpeur" table="developpeur">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="text" column="nom" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prenom" type="text" column="prenom" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="photo" type="text" column="photo" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="mdp" type="text" column="mdp" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-many field="idproj" target-entity="Projet" inversed-by="iddev" fetch="LAZY">
+      <join-table name="travaille">
+        <join-columns>
+          <join-column name="idDev" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="idProj" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="iddisc" target-entity="Discussion" inversed-by="iddev" fetch="LAZY">
+      <join-table name="repond">
+        <join-columns>
+          <join-column name="idDev" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="idDisc" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idtick" target-entity="Ticket" inversed-by="iddev" fetch="LAZY">
+      <join-table name="affecte">
+        <join-columns>
+          <join-column name="idDev" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="idTick" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

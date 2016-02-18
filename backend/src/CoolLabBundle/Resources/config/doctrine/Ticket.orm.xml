@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="CoolLabBundle\Entity\Ticket" table="ticket">
+    <indexes>
+      <index name="idProj" columns="idProj"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="libelle" type="text" column="libelle" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="description" type="text" column="description" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="etat" type="integer" column="etat" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="datecrea" type="date" column="dateCrea" nullable="false"/>
+    <field name="echeance" type="date" column="echeance" nullable="false"/>
+    <many-to-one field="idproj" target-entity="Projet" fetch="LAZY">
+      <join-columns>
+        <join-column name="idProj" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="iddev" target-entity="Developpeur" mapped-by="idtick" fetch="LAZY"/>
+  </entity>
+</doctrine-mapping>

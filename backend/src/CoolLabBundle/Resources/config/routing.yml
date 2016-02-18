@@ -1,0 +1,3 @@
+cool_lab_homepage:
+    path:     /
+    defaults: { _controller: CoolLabBundle:Default:index }
